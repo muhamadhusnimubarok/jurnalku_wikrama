@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jurnalku_wikrama/explore.dart';
 import 'package:jurnalku_wikrama/login_page.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Jurnalku Wikrama',
       debugShowCheckedModeBanner: false,
-      home: Loginpage(),
+      home: Explore(),
     );
   }
 }
