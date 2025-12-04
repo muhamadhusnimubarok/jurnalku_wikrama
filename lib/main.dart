@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'pengaturan-akun/index.dart';
+import 'package:jurnalku_wikrama/permintaan-saksi/pages/permintaan_saksi_page.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -10,10 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp( 
       debugShowCheckedModeBanner: false,
       title: 'JurnalkuWikrama',
-      home: const PengaturanAkunPage(),
+      home: const PermintaanSaksiPage(),
     );
   }
 }

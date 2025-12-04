@@ -44,12 +44,12 @@ class _FotoProfilState extends State<FotoProfil> {
             GestureDetector(
               onTap: pickImage,
               child: Container(
-                padding: const EdgeInsets.all(8),
-                decoration: const BoxDecoration(
+                padding:  EdgeInsets.all(8),
+                decoration:  BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.blue,
                 ),
-                child: const Icon(
+                child:  Icon(
                   Icons.camera_alt,
                   color: Colors.white,
                   size: 20,
@@ -59,10 +59,10 @@ class _FotoProfilState extends State<FotoProfil> {
           ],
         ),
 
-        const SizedBox(height: 10),
+         SizedBox(height: 10),
         GestureDetector(
           onTap: pickImage,
-          child: const Text(
+          child:  Text(
             "Klik untuk mengubah foto",
             style: TextStyle(
               color: Colors.grey,

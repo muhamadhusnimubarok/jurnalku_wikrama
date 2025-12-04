@@ -15,12 +15,12 @@ class FieldProfil extends StatelessWidget {
       children: [
         Text(
           label,
-          style: const TextStyle(
+          style:  TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 15,
           ),
         ),
-        const SizedBox(height: 8),
+         SizedBox(height: 8),
 
         AbsorbPointer(
           child: TextField(
@@ -33,7 +33,7 @@ class FieldProfil extends StatelessWidget {
                 color: Colors.grey.shade500,
               ),
               contentPadding:
-                  const EdgeInsets.symmetric(horizontal: 15, vertical: 14),
+                   EdgeInsets.symmetric(horizontal: 15, vertical: 14),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(6),
                 borderSide: BorderSide(color: Colors.grey.shade300),
@@ -50,7 +50,7 @@ class FieldProfil extends StatelessWidget {
           ),
         ),
 
-        const SizedBox(height: 18),
+         SizedBox(height: 18),
       ],
     );
   }

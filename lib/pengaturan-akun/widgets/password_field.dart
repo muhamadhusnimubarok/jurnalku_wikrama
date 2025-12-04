@@ -26,22 +26,22 @@ class _PasswordFieldState extends State<PasswordField> {
       children: [
         Text(
           widget.label,
-          style: const TextStyle(
+          style:  TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w600,
           ),
         ),
-        const SizedBox(height: 12),
+         SizedBox(height: 12),
 
         TextField(
           obscureText: obscure,
           decoration: InputDecoration(
             filled: true,
-            fillColor: const Color(0xfff8fafd),
+            fillColor:  Color(0xfff8fafd),
             hintText: widget.hint,
             hintStyle: TextStyle(color: Colors.grey.shade600),
             contentPadding:
-                const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
+                 EdgeInsets.symmetric(horizontal: 18, vertical: 20),
             suffixIcon: IconButton(
               icon: Icon(
                 obscure ? Icons.visibility_outlined : Icons.visibility_off_outlined,
@@ -70,7 +70,7 @@ class _PasswordFieldState extends State<PasswordField> {
 
         if (widget.helper != null)
           Padding(
-            padding: const EdgeInsets.only(top: 8.0),
+            padding:  EdgeInsets.only(top: 8.0),
             child: Text(
               widget.helper!,
               style: TextStyle(
@@ -80,7 +80,7 @@ class _PasswordFieldState extends State<PasswordField> {
             ),
           ),
 
-        const SizedBox(height: 25),
+         SizedBox(height: 25),
       ],
     );
   }

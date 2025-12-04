@@ -15,28 +15,28 @@ class _PengaturanAkunPageState extends State<PengaturanAkunPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfff5f5f5),
+      backgroundColor:  Color(0xfff5f5f5),
 
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const NavbarDummy(),
+             NavbarDummy(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 40),
+              padding:  EdgeInsets.symmetric(horizontal: 120, vertical: 40),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
+                       Text(
                         "Pengaturan Akun",
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const Text(
+                       Text(
                         "Dashboard / Pengaturan Akun",
                         style: TextStyle(
                           fontSize: 18,
@@ -45,10 +45,10 @@ class _PengaturanAkunPageState extends State<PengaturanAkunPage> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 40),
+                   SizedBox(height: 40),
                   Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.all(40),
+                    padding:  EdgeInsets.all(40),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.white,
@@ -58,23 +58,23 @@ class _PengaturanAkunPageState extends State<PengaturanAkunPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
+                         Text(
                           "Informasi Profil",
                           style: TextStyle(
                             fontSize: 26,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
-                        const SizedBox(height: 35),
+                         SizedBox(height: 35),
 
                         // foto dan formnya
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const FotoProfil(),
-                            const SizedBox(width: 50),
+                             FotoProfil(),
+                             SizedBox(width: 50),
 
-                            const Expanded(
+                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -90,7 +90,7 @@ class _PengaturanAkunPageState extends State<PengaturanAkunPage> {
                       ],
                     ),
                   ),
-                  const UbahKataSandi(),
+                   UbahKataSandi(),
                 ],
               ),
             )

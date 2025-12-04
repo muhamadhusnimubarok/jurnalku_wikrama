@@ -8,8 +8,8 @@ class UbahKataSandi extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(40),
-      margin: const EdgeInsets.only(top: 40),
+      padding:  EdgeInsets.all(40),
+      margin:  EdgeInsets.only(top: 40),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -19,46 +19,46 @@ class UbahKataSandi extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+           Text(
             "Ubah Kata Sandi",
             style: TextStyle(
               fontSize: 26,
               fontWeight: FontWeight.w700,
             ),
           ),
-          const SizedBox(height: 35),
+           SizedBox(height: 35),
 
-          const PasswordField(
+           PasswordField(
             label: "Kata Sandi Lama",
             hint: "Masukkan password",
             helper: "Masukkan kata sandi lama anda",
           ),
 
-          const PasswordField(
+           PasswordField(
             label: "Kata Sandi Baru",
             hint: "Masukkan password",
           ),
 
-          const SizedBox(height: 10),
+           SizedBox(height: 10),
 
           SizedBox(
             width: 260,
             height: 55,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xff003f91),
+                backgroundColor:  Color(0xff003f91),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
+                   SnackBar(
                     content: Text("Dummy: Perubahan disimpan"),
                   ),
                 );
               },
-              child: const Text(
+              child:  Text(
                 "Simpan Perubahan",
                 style: TextStyle(
                   fontSize: 18,

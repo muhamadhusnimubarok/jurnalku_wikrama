@@ -14,7 +14,6 @@ class NavbarDummy extends StatelessWidget {
           bottom: BorderSide(color: Colors.grey.shade300),
         ),
       ),
-
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -22,11 +21,13 @@ class NavbarDummy extends StatelessWidget {
             children:  [
               Icon(Icons.home_outlined, color: Colors.black87),
               SizedBox(width: 10),
-              Text("> Account Settings",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  )),
+              Text(
+                "> Panduan Penggunaan",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ],
           ),
 
@@ -36,29 +37,30 @@ class NavbarDummy extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text("Nama User",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      )),
-                  Text("PPLG ",
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.grey,
-                      )),
+                  Text(
+                    "Nama User",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Text(
+                    "PPLG ",
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey,
+                    ),
+                  ),
                 ],
               ),
               SizedBox(width: 15),
               CircleAvatar(
                 radius: 18,
                 backgroundColor: Colors.grey,
-                child: Icon(
-                  Icons.person,
-                  color: Colors.white,
-                ),
-              )
+                child: Icon(Icons.person, color: Colors.white),
+              ),
             ],
-          )
+          ),
         ],
       ),
     );
