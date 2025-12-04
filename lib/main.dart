@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jurnalku_wikrama/permintaan-saksi/pages/permintaan_saksi_page.dart';
+import 'package:jurnalku_wikrama/panduan-penggunaan/pages/panduan_penggunaan_page.dart';
+import 'package:jurnalku_wikrama/pengaturan-akun/pages/pengaturan_akun_page.dart';
 
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp( 
       debugShowCheckedModeBanner: false,
       title: 'JurnalkuWikrama',
-      home: const PermintaanSaksiPage(),
+      home: const PanduanPenggunaanPage(),
     );
   }
 }
