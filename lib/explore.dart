@@ -139,7 +139,7 @@ class _StudentDirectoryPageState extends State<StudentDirectoryPage> {
                     onPressed: () {
                       Navigator.pushAndRemoveUntil(
                         context,
-                        MaterialPageRoute(builder: (context) => const Loginpage()),
+                        MaterialPageRoute(builder: (context) => const LoginPage()),
                         (route) => false,
                       );
                     },
@@ -369,7 +369,7 @@ class _StudentDirectoryPageState extends State<StudentDirectoryPage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Loginpage()),
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

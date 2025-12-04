@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jurnalku_wikrama/explore.dart';
 import 'package:jurnalku_wikrama/login_page.dart';
+import 'package:jurnalku_wikrama/progress-page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,4 +20,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
