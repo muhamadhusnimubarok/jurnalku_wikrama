@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Jurnalku Wikrama',
       debugShowCheckedModeBanner: false,
-      home: Loginpage(),
+      home: LoginPage(),
     );
   }
 }
