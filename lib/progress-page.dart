@@ -36,7 +36,7 @@ class ProgressPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 Text(
-                  'M. Afgan Alzena',
+                  'Loremm',
                   style: TextStyle(
                     color: Color(0xFF111827),
                     fontSize: 14,
@@ -45,7 +45,7 @@ class ProgressPage extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  'PPLG XII-4',
+                  'PPLG XII-7',
                   style: TextStyle(color: Color(0xFF6B7280), fontSize: 12),
                 ),
               ],

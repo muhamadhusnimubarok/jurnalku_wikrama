@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jurnalku_wikrama/attitude-record.dart';
 import 'package:jurnalku_wikrama/dashboard.dart';
+import 'package:jurnalku_wikrama/habituational_jurnal.dart';
 import 'package:jurnalku_wikrama/login_page.dart';
 import 'package:jurnalku_wikrama/progress-page.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Jurnalku Wikrama',
       debugShowCheckedModeBanner: false,
-      home: ProgressPage(),
+      home: HabitualJurnalPage(),
     );
   }
 }
