@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:jurnalku_wikrama/explore.dart';
+import 'package:jurnalku_wikrama/login_page.dart';
+import 'package:jurnalku_wikrama/progress-page.dart';
 import 'package:jurnalku_wikrama/panduan-penggunaan/pages/panduan_penggunaan_page.dart';
 import 'package:jurnalku_wikrama/pengaturan-akun/pages/pengaturan_akun_page.dart';
-
 
 void main() {
   runApp(const MyApp());
