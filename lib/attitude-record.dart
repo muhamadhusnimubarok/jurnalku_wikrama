@@ -6,215 +6,209 @@ class AttitudeRecordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F9FA), // Abu-abu sangat muda modern
-      body: SafeArea(
-        child: Column(
-          children: [
-            // --- HEADER CUSTOM (Ukuran disesuaikan mobile) ---
-            const _CustomHeader(
-              title: "Catatan Sikap",
-              userName: "Lorem",
-              userClass: "PPLG XII-7",
+      resizeToAvoidBottomInset: true,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: Icon(Icons.home_outlined, color: Colors.black87),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: const [
+            SizedBox(
+              width: double.infinity,
+              child: Text(
+                'Loremm',
+                textAlign: TextAlign.right,
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+              ),
             ),
-
-            // --- KONTEN ---
-            Expanded(
-              child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(), // Efek membal ala iOS/Android
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Pantau catatan perilaku dan sikap Anda di sini.",
-                      style: TextStyle(color: Colors.grey[600], fontSize: 14),
-                    ),
-                    const SizedBox(height: 20),
-
-                    // --- CARD WARNING (KUNING) ---
-                    Container(
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFFFF8E1),
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: const Color(0xFFFFB300).withOpacity(0.3)),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Icon(Icons.info_rounded, color: Color(0xFFFF6F00), size: 28),
-                          const SizedBox(width: 14),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text(
-                                  "Perhatian",
-                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFFFF6F00)),
-                                ),
-                                const SizedBox(height: 6),
-                                Text(
-                                  "Jika ada catatan yang tidak sesuai, segera hubungi guru jurusan.",
-                                  style: TextStyle(color: Colors.orange[900], fontSize: 14, height: 1.5),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    const SizedBox(height: 24),
-
-                    // --- STATISTIK (Dibuat lebih besar angkanya) ---
-                    Row(
-                      children: [
-                        _buildStatCard("Total", "0", Colors.blue, Icons.assignment_outlined),
-                        const SizedBox(width: 12),
-                        _buildStatCard("Perbaikan", "0", Colors.orange, Icons.bolt_rounded),
-                        const SizedBox(width: 12),
-                        _buildStatCard("Selesai", "0", Colors.green, Icons.check_circle_outline_rounded),
-                      ],
-                    ),
-
-                    const SizedBox(height: 30),
-
-                    // --- EMPTY STATE (Lebih lega) ---
-                    Container(
-                      width: double.infinity,
-                      padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 24),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.03),
-                            spreadRadius: 2, blurRadius: 15, offset: const Offset(0, 5),
-                          ),
-                        ],
-                      ),
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(24),
-                            decoration: BoxDecoration(
-                              color: Colors.grey[50],
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(Icons.verified_user_outlined, size: 64, color: Colors.grey[300]),
-                          ),
-                          const SizedBox(height: 20),
-                          Text(
-                            "Tidak Ada Catatan",
-                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey[800]),
-                          ),
-                          const SizedBox(height: 8),
-                          Text(
-                            "Bagus! Belum ada catatan negatif yang dilaporkan.",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.grey[500], fontSize: 14),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 40),
-                  ],
-                ),
+            SizedBox(height: 2),
+            SizedBox(
+              width: double.infinity,
+              child: Text(
+                'PPLG XII-7',
+                textAlign: TextAlign.right,
+                style: TextStyle(fontSize: 12, color: Colors.grey),
               ),
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildStatCard(String label, String count, MaterialColor themeColor, IconData icon) {
-    return Expanded(
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-             BoxShadow(color: Colors.grey.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4)),
-          ],
-        ),
-        child: Column(
-          children: [
-            // Header Kecil
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(icon, color: themeColor.shade400, size: 14),
-                const SizedBox(width: 4),
-                Text(label, style: TextStyle(fontSize: 12, color: Colors.grey[600], fontWeight: FontWeight.w500)),
-              ],
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 10.0),
+            child: CircleAvatar(
+              radius: 20,
+              backgroundImage: AssetImage('assets/images/anonim.jpg'),
             ),
-            const SizedBox(height: 8),
-            // Angka Besar
-            Text(count, style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: themeColor.shade800)),
-          ],
+          ),
+          SizedBox(width: 10),
+        ],
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 100),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                "Catatan Sikap",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                "Lihat catatan sikap dan perilaku yang telah dilaporkan.",
+                style: TextStyle(fontSize: 15, color: Colors.grey),
+              ),
+              const SizedBox(height: 20),
+
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.yellow[50],
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: Colors.orange.shade100),
+                ),
+                child: Row(
+                  children: const [
+                    Icon(Icons.warning, color: Colors.orange),
+                    SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        'Perhatian\nJika Anda merasa ada catatan yang tidak sesuai atau keliru, silakan hubungi guru jurusan untuk mengajukan klarifikasi',
+                        style: TextStyle(fontSize: 14, color: Colors.black87),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+
+              _buildSummaryCard("Total Catatan", "0", Icons.note, Colors.blue),
+              const SizedBox(height: 15),
+              _buildSummaryCard(
+                "Dalam Perbaikan",
+                "0",
+                Icons.settings,
+                Colors.orange,
+              ),
+              const SizedBox(height: 15),
+              _buildSummaryCard(
+                "Sudah Dirubah",
+                "0",
+                Icons.check_circle,
+                Colors.green,
+              ),
+              const SizedBox(height: 30),
+
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey.shade300),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Column(
+                  children: [
+                    ExpansionTile(
+                      tilePadding: const EdgeInsets.symmetric(horizontal: 16),
+                      childrenPadding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 8,
+                      ),
+                      title: const Text(
+                        "Kategori: Percobaan",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      // subtitle: const Text("Status: Percobaan"),
+                      children: [
+                        _buildDetailRow("Status:", "Percobaan"),
+                        _buildDetailRow("Catatan:", "Percobaan"),
+                        _buildDetailRow("Dilaporkan:", "Percobaan"),
+                        _buildDetailRow("Update Terakhir:", "Percobaan"),
+                        _buildDetailRow("aksi:", "Percobaan"),
+                        const SizedBox(height: 10),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 50),
+            ],
+          ),
         ),
       ),
     );
   }
-}
 
-// --- HEADER REUSABLE ---
-class _CustomHeader extends StatelessWidget {
-  final String title;
-  final String userName;
-  final String userClass;
-
-  const _CustomHeader({required this.title, required this.userName, required this.userClass});
-
-  @override
-  Widget build(BuildContext context) {
+  Widget _buildSummaryCard(
+    String title,
+    String value,
+    IconData icon,
+    Color color,
+  ) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(20, 16, 20, 20),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border(bottom: BorderSide(color: Colors.grey.shade200)),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: Colors.grey.shade200),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.03),
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
+        ],
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            child: Row(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Tombol Home jadi Back Button kalau di mobile
-                InkWell(
-                  onTap: () => Navigator.of(context).pop(), // Fungsi Back
-                  child: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.grey[700], size: 22),
+                Text(
+                  title,
+                  style: const TextStyle(fontWeight: FontWeight.w600),
                 ),
-                const SizedBox(width: 12),
-                Flexible(
-                  child: Text(
-                    title,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey[800]),
-                    overflow: TextOverflow.ellipsis,
+                const SizedBox(height: 8),
+                Text(
+                  value,
+                  style: const TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ],
             ),
           ),
-          Row(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(userName, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Color(0xFF1F2937))),
-                  const SizedBox(height: 2),
-                  Text(userClass, style: TextStyle(fontSize: 12, color: Colors.blueGrey[400])),
-                ],
-              ),
-              const SizedBox(width: 12),
-              CircleAvatar(
-                radius: 22, // Avatar agak lebih besar
-                backgroundColor: Colors.blue.shade100,
-                backgroundImage: const NetworkImage("https://i.pravatar.cc/150?img=11"),
-              ),
-            ],
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+            child: Icon(icon, color: Colors.white, size: 28),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDetailRow(String label, String value) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 6),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(label, style: const TextStyle(fontWeight: FontWeight.bold)),
+          Flexible(
+            child: Text(
+              value,
+              textAlign: TextAlign.end,
+              style: const TextStyle(color: Colors.black87),
+            ),
           ),
         ],
       ),

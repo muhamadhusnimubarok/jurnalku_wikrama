@@ -102,7 +102,10 @@ class LoginPage extends StatelessWidget {
                         horizontal: 16,
                         vertical: 16,
                       ),
-                      suffixIcon: const Icon(Icons.visibility_off, color: Colors.grey),
+                      suffixIcon: const Icon(
+                        Icons.visibility_off,
+                        color: Colors.grey,
+                      ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide: BorderSide(color: Colors.grey.shade300),
@@ -132,7 +135,7 @@ class LoginPage extends StatelessWidget {
                         elevation: 0,
                       ),
                       onPressed: () {
-                        
+                        Navigator.pushNamed(context, '/dashboard');
                       },
                       child: const Text(
                         "Masuk",

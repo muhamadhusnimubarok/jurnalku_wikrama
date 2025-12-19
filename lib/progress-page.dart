@@ -1,679 +1,256 @@
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
+import 'package:jurnalku_wikrama/components/card_accordion_project_list.dart';
+import 'package:jurnalku_wikrama/components/card_project_list.dart';
 
 class ProgressPage extends StatelessWidget {
-  const ProgressPage({super.key});
+  ProgressPage({super.key});
 
+  List<Map<String, dynamic>> progress = [
+    {
+      "title": "Total Pengajuan",
+      "total": 2,
+      "status": "Semua status",
+      "icon_badge": Icons.check_circle_outline,
+      "color": Colors.indigo,
+    },
+    {
+      "title": "Halaman Ini",
+      "total": 0,
+      "status": "Data ditampilkan",
+      "icon_badge": Icons.calendar_today_outlined,
+      "color": Colors.green,
+    },
+    {
+      "title": "Status Pending",
+      "total": 0,
+      "status": "Perlu validasi",
+      "icon_badge": Icons.watch_later_outlined,
+      "color": Colors.amber,
+    },
+    {
+      "title": "Total Halaman",
+      "total": 1,
+      "status": "Navigasi tersedia",
+      "icon_badge": Icons.lightbulb_circle_outlined,
+      "color": Colors.indigo,
+    },
+  ];
+
+  final List<Map<String, dynamic>> projectList = [
+    {
+      "title": "Project Work",
+      "subtitle": "Kompetensi dan materi pembelajaran",
+      "table": [
+        {
+          "kompetensi": "Menganalisis kebutuhan sistem",
+          "guru": "Pak Joko",
+          "tanggal": "10-10-2025",
+          "status": "Selesai",
+          "catatan_guru": "-",
+          "catatan_siswa": "-",
+        },
+        {
+          "kompetensi": "Membuat desain UI/UX",
+          "guru": "Bu Rina",
+          "tanggal": "12-10-2025",
+          "status": "Proses",
+          "catatan_guru": "-",
+          "catatan_siswa": "-",
+        },
+      ],
+    },
+    {
+      "title": "Mobile Apps",
+      "subtitle": "Kompetensi dan materi pembelajaran",
+      "table": [
+        {
+          "kompetensi": "Membuat aplikasi Flutter",
+          "guru": "Pak Dimas",
+          "tanggal": "11-10-2025",
+          "status": "Selesai",
+          "catatan_guru": "-",
+          "catatan_siswa": "-",
+        },
+        {
+          "kompetensi": "Integrasi API",
+          "guru": "Bu Maya",
+          "tanggal": "15-10-2025",
+          "status": "Belum",
+          "catatan_guru": "-",
+          "catatan_siswa": "-",
+        },
+      ],
+    },
+    {
+      "title": "UKK (Uji Kompetensi Keahlian)",
+      "subtitle": "Kompetensi dan materi pembelajaran",
+      "table": [
+        {
+          "kompetensi": "Mempersiapkan proyek UKK",
+          "guru": "Pak Andi",
+          "tanggal": "20-10-2025",
+          "status": "Proses",
+          "catatan_guru": "-",
+          "catatan_siswa": "-",
+        },
+        {
+          "kompetensi": "Finalisasi laporan",
+          "guru": "Bu Diana",
+          "tanggal": "25-10-2025",
+          "status": "Belum",
+          "catatan_guru": "-",
+          "catatan_siswa": "-",
+        },
+      ],
+    },
+    {
+      "title": "GIM",
+      "subtitle": "Kompetensi dan materi pembelajaran",
+      "table": [
+        {
+          "kompetensi": "Game asset design",
+          "guru": "Pak Putra",
+          "tanggal": "05-10-2025",
+          "status": "Selesai",
+          "catatan_guru": "-",
+          "catatan_siswa": "-",
+        },
+        {
+          "kompetensi": "Game development",
+          "guru": "Bu Yuni",
+          "tanggal": "09-10-2025",
+          "status": "Proses",
+          "catatan_guru": "-",
+          "catatan_siswa": "-",
+        },
+      ],
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F9FA),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.home_outlined, color: Color(0xFF6B7280)),
-          onPressed: () {},
-        ),
-        title: const Row(
-          children: [
-            Icon(Icons.chevron_right, color: Color(0xFF6B7280), size: 16),
-            SizedBox(width: 4),
-            Text(
-              'Progress',
-              style: TextStyle(
-                color: Color(0xFF6B7280),
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ],
+        backgroundColor: Colors.grey[100],
+         leading: IconButton(
+          icon: Icon(Icons.home_outlined, color: Colors.black87),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
         actions: [
-          Flexible(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
-                  'Loremm',
-                  style: TextStyle(
-                    color: Color(0xFF111827),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
+          Container(
+            margin: EdgeInsets.all(10),
+            child: Row(
+              children: [
+                Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        "Loremm",
+                        style: GoogleFonts.poppins(fontSize: 10),
+                      ),
+                      Text(
+                        "PPLG XII-7",
+                        style: GoogleFonts.poppins(
+                          fontSize: 8,
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                    ],
                   ),
-                  overflow: TextOverflow.ellipsis,
                 ),
-                Text(
-                  'PPLG XII-7',
-                  style: TextStyle(color: Color(0xFF6B7280), fontSize: 12),
+                SizedBox(width: 12),
+                ClipOval(
+                  child: Image.asset(
+                    "assets/images/anonim.jpg",
+                    height: 32,
+                    width: 32,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ],
             ),
           ),
-          const SizedBox(width: 12),
-          Container(
-            width: 32,
-            height: 32,
-            decoration: const BoxDecoration(
-              color: Color(0xFF374151),
-              shape: BoxShape.circle,
-            ),
-            child: const Icon(Icons.person, color: Colors.white, size: 18),
-          ),
-          const SizedBox(width: 16),
         ],
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header responsive
-            LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth > 600) {
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              'Progress Belajar',
-                              style: TextStyle(
-                                fontSize: 28,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF111827),
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            const Text(
-                              'Pantau perkembangan kompetensi dan materi pembelajaran Anda',
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Color(0xFF6B7280),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 6,
-                        ),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFDBEAFE),
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        child: const Text(
-                          'Tuesday, 11 November 2025',
-                          style: TextStyle(
-                            color: Color(0xFF1D4ED8),
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  );
-                } else {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Progress Belajar',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF111827),
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      const Text(
-                        'Pantau perkembangan kompetensi dan materi pembelajaran Anda',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Color(0xFF6B7280),
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 6,
-                        ),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFDBEAFE),
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        child: const Text(
-                          'Tuesday, 11 November 2025',
-                          style: TextStyle(
-                            color: Color(0xFF1D4ED8),
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  );
-                }
+            Text(
+              "Progress Belajar",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Pantau perkembangan kompetensi dan materi pembelajaran Anda",
+              style: TextStyle(fontSize: 16, color: Colors.black54),
+            ),
+            SizedBox(height: 20),
+            Container(
+              padding: EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Text(
+                "Wednesday, 3 December 2025",
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.indigo,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            ListView.separated(
+              itemCount: progress.length,
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              separatorBuilder: (context, index) {
+                return SizedBox(height: 15);
+              },
+              itemBuilder: (context, index) {
+                return CardProggress(
+                  title: progress[index]["title"],
+                  countTasks: progress[index]["total"],
+                  status: progress[index]["status"],
+                  iconBadge: progress[index]["icon_badge"],
+                  colorStatus: progress[index]["color"],
+                );
               },
             ),
-
-            const SizedBox(height: 24),
-
-            // Stats Cards responsive
-            LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth > 800) {
-                  return Row(
-                    children: [
-                      Expanded(
-                        child: _StatCard(
-                          title: 'Total Pengajuan',
-                          value: '1',
-                          subtitle: 'Semua status',
-                          color: Colors.blue,
-                          icon: Icons.check_circle_outline,
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: _StatCard(
-                          title: 'Halaman Ini',
-                          value: '0',
-                          subtitle: 'Data ditampilkan',
-                          color: Colors.green,
-                          icon: Icons.description_outlined,
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: _StatCard(
-                          title: 'Status Pending',
-                          value: '0',
-                          subtitle: 'Perlu validasi',
-                          color: Colors.orange,
-                          icon: Icons.access_time,
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: _StatCard(
-                          title: 'Total Halaman',
-                          value: '1',
-                          subtitle: 'Navigasi tersedia',
-                          color: Colors.purple,
-                          icon: Icons.public,
-                        ),
-                      ),
-                    ],
-                  );
-                } else {
-                  return Column(
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: _StatCard(
-                              title: 'Total Pengajuan',
-                              value: '1',
-                              subtitle: 'Semua status',
-                              color: Colors.blue,
-                              icon: Icons.check_circle_outline,
-                            ),
-                          ),
-                          const SizedBox(width: 12),
-                          Expanded(
-                            child: _StatCard(
-                              title: 'Halaman Ini',
-                              value: '0',
-                              subtitle: 'Data ditampilkan',
-                              color: Colors.green,
-                              icon: Icons.description_outlined,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 12),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: _StatCard(
-                              title: 'Status Pending',
-                              value: '0',
-                              subtitle: 'Perlu validasi',
-                              color: Colors.orange,
-                              icon: Icons.access_time,
-                            ),
-                          ),
-                          const SizedBox(width: 12),
-                          Expanded(
-                            child: _StatCard(
-                              title: 'Total Halaman',
-                              value: '1',
-                              subtitle: 'Navigasi tersedia',
-                              color: Colors.purple,
-                              icon: Icons.public,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  );
-                }
+            SizedBox(height: 10),
+            ListView.separated(
+              itemCount: projectList.length,
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              separatorBuilder: (context, index) {
+                return SizedBox(height: 15);
               },
-            ),
+              itemBuilder: (context, index) {
+                final item = projectList[index];
+                final data = item['table'] as List<Map<String, String>>;
 
-            const SizedBox(height: 24),
-
-            // Sections
-            _SectionCard(
-              title: 'Project Work',
-              subtitle: 'Kompetensi dan materi pembelajaran',
-              headers: const [
-                'KOMPETENSI',
-                'GURU',
-                'TANGGAL',
-                'STATUS',
-                'CATATAN GURU',
-                'CATATAN SISWA',
-              ],
-              data: const [],
-            ),
-
-            const SizedBox(height: 16),
-
-            _SectionCard(
-              title: 'Mobile Apps',
-              subtitle: 'Kompetensi dan materi pembelajaran',
-              headers: const [
-                'KOMPETENSI',
-                'GURU',
-                'TANGGAL',
-                'STATUS',
-                'CATATAN GURU',
-                'CATATAN SISWA',
-              ],
-              data: const [
-                [
-                  'Flutter : Slicing',
-                  'M. Alfin Mulya Putra',
-                  '28 Okt 2025',
-                  'Approved',
-                  'Tidak ada catatan',
-                  'Tidak ada catatan',
-                ],
-              ],
-            ),
-
-            const SizedBox(height: 16),
-
-            _SectionCard(
-              title: 'UKK (Uji Kompetensi Keahlian)',
-              subtitle: 'Kompetensi dan materi pembelajaran',
-              headers: const [
-                'KOMPETENSI',
-                'GURU',
-                'TANGGAL',
-                'STATUS',
-                'CATATAN GURU',
-                'CATATAN SISWA',
-              ],
-              data: const [],
-            ),
-
-            const SizedBox(height: 16),
-
-            _SectionCard(
-              title: 'GIM',
-              subtitle: 'Kompetensi dan materi pembelajaran',
-              headers: const [
-                'KOMPETENSI',
-                'GURU',
-                'TANGGAL',
-                'STATUS',
-                'CATATAN GURU',
-                'CATATAN SISWA',
-              ],
-              data: const [],
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CardAccordionProjectList(
+                      title: item['title'],
+                      subtitleExpansion: item['subtitle'],
+                      projectList: data,
+                    ),
+                  ],
+                );
+              },
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class _StatCard extends StatelessWidget {
-  final String title;
-  final String value;
-  final String subtitle;
-  final Color color;
-  final IconData icon;
-
-  const _StatCard({
-    required this.title,
-    required this.value,
-    required this.subtitle,
-    required this.color,
-    required this.icon,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: const Color(0xFFE5E7EB)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: Color(0xFF6B7280),
-                    fontWeight: FontWeight.w500,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.all(6),
-                decoration: BoxDecoration(
-                  color: color.withOpacity(0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(icon, color: color, size: 14),
-              ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          Text(
-            value,
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF111827),
-            ),
-          ),
-          const SizedBox(height: 6),
-          Row(
-            children: [
-              Container(
-                width: 4,
-                height: 4,
-                decoration: BoxDecoration(color: color, shape: BoxShape.circle),
-              ),
-              const SizedBox(width: 4),
-              Expanded(
-                child: Text(
-                  subtitle,
-                  style: TextStyle(
-                    fontSize: 10,
-                    color: color,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _SectionCard extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final List<String> headers;
-  final List<List<String>> data;
-
-  const _SectionCard({
-    required this.title,
-    required this.subtitle,
-    required this.headers,
-    required this.data,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: const Color(0xFFE5E7EB)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF111827),
-                  ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  subtitle,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: Color(0xFF6B7280),
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-          // Horizontal scrollable table
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Container(
-              constraints: BoxConstraints(
-                minWidth: MediaQuery.of(context).size.width - 32,
-              ),
-              child: Column(
-                children: [
-                  // Table Header
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 12,
-                    ),
-                    decoration: const BoxDecoration(
-                      color: Color(0xFFF9FAFB),
-                      border: Border(
-                        top: BorderSide(color: Color(0xFFE5E7EB)),
-                        bottom: BorderSide(color: Color(0xFFE5E7EB)),
-                      ),
-                    ),
-                    child: Row(
-                      children: headers
-                          .map(
-                            (header) => SizedBox(
-                              width: 120,
-                              child: Text(
-                                header,
-                                style: const TextStyle(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w600,
-                                  color: Color(0xFF374151),
-                                ),
-                              ),
-                            ),
-                          )
-                          .toList(),
-                    ),
-                  ),
-
-                  // Table Data
-                  if (data.isEmpty)
-                    const Padding(
-                      padding: EdgeInsets.all(32),
-                      child: Center(
-                        child: Text(
-                          'Tidak ada data',
-                          style: TextStyle(
-                            color: Color(0xFF9CA3AF),
-                            fontSize: 12,
-                          ),
-                        ),
-                      ),
-                    )
-                  else
-                    ...data
-                        .map(
-                          (row) => Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 12,
-                            ),
-                            decoration: const BoxDecoration(
-                              border: Border(
-                                bottom: BorderSide(color: Color(0xFFE5E7EB)),
-                              ),
-                            ),
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  width: 120,
-                                  child: Text(
-                                    row[0],
-                                    style: const TextStyle(
-                                      fontSize: 12,
-                                      color: Color(0xFF111827),
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 120,
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 6,
-                                      vertical: 3,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xFFDBEAFE),
-                                      borderRadius: BorderRadius.circular(4),
-                                    ),
-                                    child: Text(
-                                      row[1],
-                                      style: const TextStyle(
-                                        fontSize: 10,
-                                        color: Color(0xFF1D4ED8),
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 120,
-                                  child: Row(
-                                    children: [
-                                      const Icon(
-                                        Icons.calendar_today,
-                                        size: 12,
-                                        color: Color(0xFF6B7280),
-                                      ),
-                                      const SizedBox(width: 4),
-                                      Text(
-                                        row[2],
-                                        style: const TextStyle(
-                                          fontSize: 10,
-                                          color: Color(0xFF1D4ED8),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 120,
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 6,
-                                      vertical: 3,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xFFDCFCE7),
-                                      borderRadius: BorderRadius.circular(4),
-                                    ),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Container(
-                                          width: 4,
-                                          height: 4,
-                                          decoration: const BoxDecoration(
-                                            color: Color(0xFF16A34A),
-                                            shape: BoxShape.circle,
-                                          ),
-                                        ),
-                                        const SizedBox(width: 4),
-                                        Text(
-                                          row[3],
-                                          style: const TextStyle(
-                                            fontSize: 10,
-                                            color: Color(0xFF16A34A),
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 120,
-                                  child: Text(
-                                    row[4],
-                                    style: const TextStyle(
-                                      fontSize: 10,
-                                      color: Color(0xFF6B7280),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 120,
-                                  child: Text(
-                                    row[5],
-                                    style: const TextStyle(
-                                      fontSize: 10,
-                                      color: Color(0xFF6B7280),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        )
-                        .toList(),
-                ],
-              ),
-            ),
-          ),
-        ],
       ),
     );
   }
